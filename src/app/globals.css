@@ -3,25 +3,198 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@font-face {
+  font-family: Anton, sans-serif;
+  src: url('/public/assets/Anton-Regular.ttf');
+}
+
+@font-face {
+  font-family: Roboto, sans-serif;
+  src: url('/public/assets/Roboto-Regular.ttf');
+}
+
+@media screen and (max-width: 1411px) {
+  #Dashboard {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media screen and (max-width: 1288px) {
+  #ChatDashboard {
+    min-width: 250px;
+  }
 }
+
+@media screen and (max-width: 1192px) {
+  #Dashboard {
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 30px;
+    padding-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 1055px) {
+  #Navbar, #Home, #Features {
+    padding-inline: 20px;
+  }
+  #imgCustomerService {
+    display: none;
+  }
+  #Footer {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  #Features {
+    padding-inline: 20px;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  #Features>div:nth-child(1){
+    height: max-content;
+    gap: 50px;
+  }
+
+  #CardImage {
+    grid-template-columns: auto auto;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 836px) {
+  #Navbar>div>ul {
+    display: none;
+  }
+  #CardSectionDashboard {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  #Chart {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+    min-width: 0px;
+    width: 99vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #Home>div:nth-child(2) {
+    display: none;
+  }
+
+  #Home>div:nth-child(1){
+    width: 100%;
+    padding-inline: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #CardImage {
+    grid-template-columns: auto;
+  }
+  #Footer {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 605px) {
+  #FeaturesCard {
+    min-width: 200px;
+  }
+  #FeaturesCardSection {
+    height: auto;
+    padding-top: 30px;
+  }
+  #Num {
+    font-size: 20px;
+  }
+  #Title {
+    font-size: 44px;
+  }
+  #Desc {
+    font-size: 16px;
+  }
+  #ContactButton {
+    min-width: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    gap: 0px;
+  }
+  #Contact {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media screen and (max-width: 522px) {
+  #CardSectionDashboard {
+    grid-template-columns: auto;
+  }
+  #DataSection {
+    max-height: fit-content;
+  }
+}
+
+@media screen and (max-width: 327px) {
+  #DashboardButton {
+    padding-right: 1rem;
+    gap: 0rem;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.font-anton {
+  font-family: Anton, sans-serif;
+}
+
+.font-roboto {
+  font-family: Roboto, sans-serif;
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #138F2E;
+}
+
+input[type="date"] { 
+  background: transparent;
+  color: black;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
+}
+
+
+
